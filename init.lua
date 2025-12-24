@@ -28,5 +28,4 @@ vim.keymap.set("n", "<C-k>", ":q!<cr>") --exit without saving
 
 
 
---If youre seeing this I saved in insert!
 
