@@ -1,7 +1,9 @@
 --SETTINGS
 --Plugins
+
 require('plugins')
 require('config.neotree')
+require('config.treesitter')
 
 --Leader
 vim.g.mapleader = " "
@@ -13,7 +15,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.swapfile = false
 
 --Always show line numbers
-vim.wo.number = true--Always show line numbers
+vim.wo.number = true
 
 --KEY BINDS
 --Copy and paste controls
@@ -29,7 +31,7 @@ vim.keymap.del("i", "<C-s>")
 vim.keymap.set("i", "<C-s>", '<Esc>:w<CR>:echo "File saved"<CR>a', { noremap = true })
 --Save and exit
 vim.keymap.set("n", "<C-o>", ":wq<cr>")
-vim.keymap.set("n", "<C-k>", ":q!<cr>") --exit without saving
+vim.keymap.set("n", "<C-q>", ":q!<cr>", { noremap = true }) --exit without saving
 
 --Moving around in insert mode
 vim.keymap.set("i", "<C-l>", '<Right>', { noremap = true })
