@@ -4,6 +4,9 @@
 require('plugins')
 require('config.neotree')
 require('config.treesitter')
+require('config.lsp')
+require('config.cmp')
+
 
 --Leader
 vim.g.mapleader = " "
@@ -16,6 +19,10 @@ vim.opt.swapfile = false
 
 --Always show line numbers
 vim.wo.number = true
+
+--Use my term colors 
+vim.opt.termguicolors = false 
+
 
 --KEY BINDS
 --Copy and paste controls
@@ -51,6 +58,12 @@ vim.keymap.set('n', '<C-h>', '<C-w>h') --Navigate aroud splits
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+--Send commands to nav TMUX
+vim.keymap.set('n', '<S-Left>', ':!tmux select-pane -L<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<S-Down>', ':!tmux select-pane -D<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<S-Up>', ':!tmux select-pane -U<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<S-Right>', ':!tmux select-pane -R<CR>', { noremap = true, silent = true })
 
 --Toggle line numbers on and off default is on
 vim.keymap.set('n', '<leader>l', ':set number!<CR>', { silent = true })
